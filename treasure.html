@@ -38,98 +38,169 @@
     <p>Click on the chests to search for treasure</p>
     <p id="chests">Number of chests checked is zero.</p>
     <p id="score">Score is unknown.</p>
-    <p id="help">Help report</p>
+    <div id="divCont">
+        <p id="help">Help report</p>
+    </div>
 
     <div class="container">
         <div class="row">
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_1" src="img1.jpeg" alt="Treasure chest" onclick="check(0)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_2" src="img1.jpeg" alt="Treasure chest" onclick="check(1)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_3" src="img1.jpeg" alt="Treasure chest" onclick="check(2)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_4" src="img1.jpeg" alt="Treasure chest" onclick="check(3)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_5" src="img1.jpeg" alt="Treasure chest" onclick="check(4)">
             </div>
         </div> <br>
 
         <div class="row">
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_6" src="img1.jpeg" alt="Treasure chest" onclick="check(5)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_7" src="img1.jpeg" alt="Treasure chest" onclick="check(6)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_8" src="img1.jpeg" alt="Treasure chest" onclick="check(7)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_9" src="img1.jpeg" alt="Treasure chest" onclick="check(8)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
-            </div>
-        </div><br>
-
-        <div class="row">
-            <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
-            </div>
-            <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
-            </div>
-            <div class="col-md">
-                <img src="img4.png" alt="Help">
-            </div>
-            <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
-            </div>
-            <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_10" src="img1.jpeg" alt="Treasure chest" onclick="check(9)">
             </div>
         </div><br>
 
         <div class="row">
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_11" src="img1.jpeg" alt="Treasure chest" onclick="check(10)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_12" src="img1.jpeg" alt="Treasure chest" onclick="check(11)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_13" src="img4.png" alt="Help" onclick="help()">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_14" src="img1.jpeg" alt="Treasure chest" onclick="check(13)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_15" src="img1.jpeg" alt="Treasure chest" onclick="check(14)">
             </div>
         </div><br>
 
         <div class="row">
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_16" src="img1.jpeg" alt="Treasure chest" onclick="check(15)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_17" src="img1.jpeg" alt="Treasure chest" onclick="check(16)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_18" src="img1.jpeg" alt="Treasure chest" onclick="check(17)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_19" src="img1.jpeg" alt="Treasure chest" onclick="check(18)">
             </div>
             <div class="col-md">
-                <img src="img1.jpeg" alt="Treasure chest">
+                <img id="img_20" src="img1.jpeg" alt="Treasure chest" onclick="check(19)">
+            </div>
+        </div><br>
+
+        <div class="row">
+            <div class="col-md">
+                <img id="img_21" src="img1.jpeg" alt="Treasure chest" onclick="check(20)">
+            </div>
+            <div class="col-md">
+                <img id="img_22" src="img1.jpeg" alt="Treasure chest" onclick="check(21)">
+            </div>
+            <div class="col-md">
+                <img id="img_23" src="img1.jpeg" alt="Treasure chest" onclick="check(22)">
+            </div>
+            <div class="col-md">
+                <img id="img_24" src="img1.jpeg" alt="Treasure chest" onclick="check(23)">
+            </div>
+            <div class="col-md">
+                <img id="img_25" src="img1.jpeg" alt="Treasure chest" onclick="check(24)">
             </div>
         </div>
+
+
+
+        <script>
+            const id = ["img_1", "img_2", "img_3", "img_4", "img_5", "img_6", "img_7", "img_8","img_9","img_10","img_11","img_12","img_13","img_14","img_15","img_16","img_17","img_18","img_19","img_20","img_21","img_22","img_23","img_24","img_25"];
+            var chestCount = 0;
+            var score = 0;
+            var lastCheck = 12;
+            var treasureLocation = 18;//Math.floor(Math.random() * 24)+1;
+
+            /*if(treasureLocation==18)
+            {
+                const demoDiv = document.getElementById("divCont");
+                const btn = document.createElement("BUTTON");
+                btn.innerHTML = "Reset";
+                demoDiv.appendChild(btn);
+                btn.onclick = reset;
+            }*/
+
+            function check(position) 
+            {
+                var pos_id = "img_"+ (position+1);
+                const element_img = document.getElementById(pos_id);
+                if(position!=treasureLocation) {
+                    element_img.src = "sad.png";
+                }
+                else {
+                    element_img.src = "treasure.jpg"
+                }
+                chestCount++;
+                score++;
+                document.getElementById("chests").innerHTML = "Number of chests checked is "+chestCount;
+                document.getElementById("score").innerHTML = "Score is "+score;
+                lastCheck = position;
+                //console.log(lastCheck);
+            }
+
+            function help()
+            {
+                var last_row = Math.floor(lastCheck/5);
+                var last_col = (lastCheck)%5;
+                var treasure_row = Math.floor(treasureLocation/5);
+                var treasure_col = treasureLocation%5;
+                score+=2;
+                var help_str;
+                document.getElementById("score").innerHTML = "Score is "+score;
+                if(lastCheck == treasureLocation || (last_row!=treasure_row && last_col!=treasure_col)) {
+                    console.log(last_row +" "+treasure_row);
+                    console.log(last_col + " "+treasure_col);
+                    help_str = "sorry, no help available";
+                }
+                else if(last_row == treasure_row && last_col < treasure_col) help_str = "right";
+                else if(last_row == treasure_row && last_col > treasure_col) help_str = "left";
+                else if(last_col == treasure_col && last_row > treasure_row) help_str = "up";
+                else if(last_col == treasure_col && last_row < treasure_row) help_str = "down";
+                document.getElementById("help").innerHTML = help_str;
+            }
+
+            /*function reset()
+            {
+                //console.log("hello");
+                chestCount = 0;
+                score = 0;
+                treasureLocation = Math.floor(Math.random() * 24)+1;   
+                document.getElementById("chests").innerHTML = "Number of chests checked is "+chestCount;
+                document.getElementById("score").innerHTML = "Score is "+score;
+                document.getElementById("help").innerHTML = "Help report";
+            }*/
+        </script>
 
 </body>
 
