@@ -2,65 +2,69 @@
 <html lang="en">
 
 <head>
-    <title>Reaction HTML Page</title>
+    <title>TimeOut Reaction Game</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://endcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.start.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.start.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.start.js"></script>
+    <script src="https://endcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.start.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+    crossorigin="anonymous"></script>
+
 </head>
 
 <body>
 
-    <h2>Swathi Nuli Reaction Timer</h2> <hr>
+   
+        <h2>Swathi Nuli Reaction Timer</h2><hr>
+        <p class="card-header" id="target">Your time </p>
+        <br>
+        <p class="card-header" id="countdown">Count </p>
 
+        <button type="button" class="btn btn-primary" onclick="startTime()">Start Timer</button>
 
-    <div id="target">
-        Your time
-    </div><br>
-
-    <div id="countdown">
-        Count
-    </div> <br>
-
-    <button type="button" class="btn btn-primary" onclick="startTime()">Start Timer</button>
-    <button type="button" class="btn btn-primary" onclick="recordReact()">React Now</button>
-
-    
-    
-
+        <button type="button" class="btn btn-primary" onclick="recordReact()">React Now</button>
     <script>
+
         var myTime = undefined;
-        function recordReact()
-        {
+        function recordReact() {
             myTime = Date.now();
-            console.log(myTime);
         }
 
-        function startTime()
-        {
-            var start=2;
-            var end=12;
+        function startTime() {
+            var start = 2;
+            var end = 11;
+            var rnd = Math.floor(Math.random() * (end - start)) + start;
 
-            var rnd = Math.floor(Math.random() * (start - end)) + start;
-            for(var i=0;i<rnd;i++)
-            {
-                setTimeout(function () {
-                    document.getElementById('countdown').innerHTML = i;
-                },(rnd-i) * 1000)
+            for (i = 0; i < rnd; i++) {
+                timeout_func(i, rnd)
             }
-            setTimeout(function () {
-               if(myTime == undefined) {
+
+            setTimeout(() => {
+                if (myTime == undefined) {
                     document.getElementById("target").innerHTML = "Too Slow"
-               }
-               else {
-                var button_press_time = Date.now();
-                document.getElementById("target").innerHTML = "Time was " + (button_press_time - myTime);
-               }
-            }, 3000)
+                } else {
+                    let buttonTime = Date.now()
+                    let time_diff = buttonTime - myTime
+                    document.getElementById("target").innerHTML = "Time was " + time_diff
+                }
+            }, rnd * 1000)
+
         }
 
+        function timeout_func(i, rnd) {
+            setTimeout(() => {
+                document.getElementById('countdown').innerHTML = i
+            }, ((rnd - i) * 1000))
+
+        }
     </script>
 
 </body>
