@@ -3,10 +3,10 @@
 
 <head>
     <title>Cycler HTML Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://endcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.start.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.start.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.start.js"></script>
+    <script src="https://endcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.start.js"></script>
     <style>
         .flex-container {
             display: flex;
@@ -23,7 +23,7 @@
         }
 
         /* Responsive layout */
-        @media (max-width: 600px) {
+        @media (end-width: 600px) {
             .flex-container {
                 flex-direction: column;
                 background-color: green;
@@ -48,6 +48,7 @@
     <button class="btn btn-primary" onclick="makeNewDiv()">Add value</button>
     <button class="btn btn-primary"  onclick="get()">Get</button>
     <button class="btn btn-primary"  onclick="spin()">Spin</button>
+    <button class="btn btn-primary"  onclick="swap()">Swap</button>
 
 
 </body>
@@ -85,6 +86,36 @@
         console.log(removedItem);
         const div_cont = document.getElementById("target");
         div_cont.insertBefore(removedItem, div_cont.firstChild);
+    }
+
+    function swap()
+    {
+        let cyclerItems = document.getElementsByClassName("cycler")
+
+		let start = 0
+		let end = cyclerItems.length
+
+		let rnd1 = Math.floor(Math.random() * (end - start) ) + start;
+		let rnd2 = Math.floor(Math.random() * (end - start) ) + start;
+
+		if ((rnd1 != rnd2) && (end > 1)) {
+
+			let element1 = cyclerItems[rnd1]
+			let element2 = cyclerItems[rnd2]
+
+			let container = document.getElementById('target')
+			
+			if (rnd1 > rnd2) {
+				cyclerItems[rnd1].remove()
+				cyclerItems[rnd2].remove()
+			} else {
+				cyclerItems[rnd2].remove()				
+				cyclerItems[rnd1].remove()
+			}
+
+			container.insertBefore(element2, cyclerItems[rnd1])
+			container.insertBefore(element1, cyclerItems[rnd2])
+        }
     }
 </script>
 

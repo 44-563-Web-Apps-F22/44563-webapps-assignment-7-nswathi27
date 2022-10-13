@@ -40,12 +40,15 @@
 
         function startTime()
         {
-            //console.log("hello");
-            for(var i=0;i<4;i++)
+            var start=2;
+            var end=12;
+
+            var rnd = Math.floor(Math.random() * (start - end)) + start;
+            for(var i=0;i<rnd;i++)
             {
                 setTimeout(function () {
                     document.getElementById('countdown').innerHTML = i;
-                },(3-i) * 1000)
+                },(rnd-i) * 1000)
             }
             setTimeout(function () {
                if(myTime == undefined) {

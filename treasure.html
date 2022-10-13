@@ -40,6 +40,7 @@
     <p id="score">Score is unknown.</p>
     <div id="divCont">
         <p id="help">Help report</p>
+        <button type="button" class="btn btn-primary" onclick="reset()">Reset</button>
     </div>
 
     <div class="container">
@@ -140,7 +141,11 @@
             var chestCount = 0;
             var score = 0;
             var lastCheck = 12;
-            var treasureLocation = 18;      //Math.floor(Math.random() * 24)+1;
+            var treasureLocation = 18;
+            if(treasureLocation == 12)
+            {
+                treasureLocation = Math.floor(Math.random() * 24)+1;  
+            }    
 
             function check(position) 
             {
@@ -173,14 +178,14 @@
                     console.log(last_col + " "+treasure_col);
                     help_str = "sorry, no help available";
                 }
-                else if(last_row == treasure_row && last_col < treasure_col) help_str = "right";
-                else if(last_row == treasure_row && last_col > treasure_col) help_str = "left";
-                else if(last_col == treasure_col && last_row > treasure_row) help_str = "up";
-                else if(last_col == treasure_col && last_row < treasure_row) help_str = "down";
+                else if(last_row == treasure_row && lastCheck < treasureLocation) help_str = "Right";
+                else if(last_row == treasure_row && lastCheck > treasureLocation) help_str = "Left";
+                else if(last_col == treasure_col && lastCheck > treasureLocation) help_str = "Up";
+                else if(last_col == treasure_col && lastCheck < treasureLocation) help_str = "Down";
                 document.getElementById("help").innerHTML = help_str;
             }
 
-            /*function reset()
+            function reset()
             {
                 //console.log("hello");
                 chestCount = 0;
@@ -189,7 +194,14 @@
                 document.getElementById("chests").innerHTML = "Number of chests checked is "+chestCount;
                 document.getElementById("score").innerHTML = "Score is "+score;
                 document.getElementById("help").innerHTML = "Help report";
-            }*/
+                for(var i=0;i<=24;i++)
+                {
+                    if(i!=12)
+                    {
+                        document.getElementById(id[i]).src = "img1.jpeg";
+                    }
+                }
+            }
 
               /*if(treasureLocation==18)
             {
