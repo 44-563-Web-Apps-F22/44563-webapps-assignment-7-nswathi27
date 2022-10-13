@@ -140,16 +140,7 @@
             var chestCount = 0;
             var score = 0;
             var lastCheck = 12;
-            var treasureLocation = 18;//Math.floor(Math.random() * 24)+1;
-
-            /*if(treasureLocation==18)
-            {
-                const demoDiv = document.getElementById("divCont");
-                const btn = document.createElement("BUTTON");
-                btn.innerHTML = "Reset";
-                demoDiv.appendChild(btn);
-                btn.onclick = reset;
-            }*/
+            var treasureLocation = 18;      //Math.floor(Math.random() * 24)+1;
 
             function check(position) 
             {
@@ -166,7 +157,6 @@
                 document.getElementById("chests").innerHTML = "Number of chests checked is "+chestCount;
                 document.getElementById("score").innerHTML = "Score is "+score;
                 lastCheck = position;
-                //console.log(lastCheck);
             }
 
             function help()
@@ -199,6 +189,15 @@
                 document.getElementById("chests").innerHTML = "Number of chests checked is "+chestCount;
                 document.getElementById("score").innerHTML = "Score is "+score;
                 document.getElementById("help").innerHTML = "Help report";
+            }*/
+
+              /*if(treasureLocation==18)
+            {
+                const demoDiv = document.getElementById("divCont");
+                const btn = document.createElement("BUTTON");
+                btn.innerHTML = "Reset";
+                demoDiv.appendChild(btn);
+                btn.onclick = reset;
             }*/
         </script>
 
